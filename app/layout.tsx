@@ -5,6 +5,7 @@ import { Nunito } from 'next/font/google';
 // components
 import Navbar from '@app/app/components/navbar/Navbar'
 import ClientOnly from './components/ClientOnly/ClientOnly';
+import Modal from './components/modal/Modal';
 
 export const metadata: Metadata = {
   title: 'Vico',
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ClientOnly>
+        <Modal isOpen title='Sign In' />
         <Navbar />
       </ClientOnly>
       <body className={nunito.className}>{children}</body>
